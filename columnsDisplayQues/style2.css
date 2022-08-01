@@ -1,0 +1,42 @@
+.parent-div div {
+    background-color: yellow;
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+}
+
+.parent-div-2 div {
+    background-color: pink;
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+}
+
+/* desktop */
+@media screen and (min-width: 1080px) {
+
+    .parent-div {
+        display: grid;
+        grid-template-columns: 30px 30px 30px 30px 30px;
+    }
+}
+
+
+/* tablet */
+@media screen and (min-width: 600px) and (max-width: 1080px) {
+
+    .parent-div {
+        display: grid;
+        grid-template-columns: 30px 30px 30px;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 600px) {
+
+    .parent-div {
+        display: grid;
+        grid-template-columns: 30px;
+    }
+
+}

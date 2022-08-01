@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style2.css" rel="stylesheet" />
+</head>
+
+<body>
+    <p>
+        I've used media queries & javascript to give dynamic styling to following divs depending upon screen size<br />
+        For Desktop (>1080px) : 5 columns
+        <br />
+        For Tablet (>600px & <=1080px): 3 columns <br>
+            For Mobile (<=600px): 1 column </p>
+                <p>Using media queries</p>
+                <div class="parent-div">
+                    <div>div 1</div>
+                    <div>div 2</div>
+                    <div>div 3</div>
+                    <div>div 4</div>
+                    <div>div 5</div>
+                    <div>div 6</div>
+                    <div>div 7</div>
+                    <div>div 8</div>
+                    <div>div 9</div>
+                    <div>div 10</div>
+                </div>
+                <p>Using javascript</p>
+                <div class="parent-div-2" id="parent-div-2">
+                    <div>div 11</div>
+                    <div>div 12</div>
+                    <div>div 13</div>
+                    <div>div 14</div>
+                    <div>div 15</div>
+                    <div>div 16</div>
+                    <div>div 17</div>
+                    <div>div 18</div>
+                    <div>div 19</div>
+                    <div>div 20</div>
+                </div>
+                <script>
+                    function windowResized(e) {
+                        let innerWidth = window.innerWidth;
+                        // desktop 
+                        if (innerWidth > 1080) {
+                            document.getElementById("parent-div-2").style.display = "grid";
+                            document.getElementById("parent-div-2").style.gridTemplateColumns = "30px 30px 30px 30px 30px";
+                        }
+                        // tablet
+                        else if (innerWidth > 600) {
+                            document.getElementById("parent-div-2").style.display = "grid";
+                            document.getElementById("parent-div-2").style.gridTemplateColumns = "30px 30px 30px";
+                        }
+                        // mobile
+                        else {
+                            document.getElementById("parent-div-2").style.display = "grid";
+                            document.getElementById("parent-div-2").style.gridTemplateColumns = "30px";
+                        }
+                    }
+                    window.addEventListener("resize", (e) => windowResized(e))
+                </script>
+</body>
+
+</html>
